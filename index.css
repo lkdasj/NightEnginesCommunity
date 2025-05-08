@@ -1,0 +1,382 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'New Rocker', system-ui;
+    background-image: url('img-web/fondo1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Header section */
+header {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    padding: 30px 0;
+}
+
+.header-image {
+    max-width: 30%; /* Aumenté el tamaño de la imagen */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Section styling */
+section {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 30px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro y suave */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra adicional para las secciones */
+}
+
+/* Títulos de las secciones */
+section h2 {
+    font-size: 2.5rem; /* Aumenté el tamaño de los títulos */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fb5b2a; /* Color de los títulos en naranja suave */
+    text-transform: uppercase;
+}
+
+/* Estilo de los párrafos */
+section p, section ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* Listas de reglas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: url('img-web/') no-repeat left center; /* Agregué un ícono de marca */
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* Sección Únete */
+#join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+  }
+  
+  #join h2 {
+    font-family: 'New Rocker', cursive;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fb5b2a; /* Un color llamativo */
+  }
+  
+  #join p {
+    margin-bottom: 30px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+    color: white;
+  }
+  
+  /* Botón principal (Discord) */
+  .join-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #7289da, #5865F2); /* Inspirado en Discord */
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background 0.3s;
+    margin-bottom: 40px;
+  }
+  
+  .join-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5865F2, #7289da);
+  }
+  
+  /* Contenedor de las tarjetas sociales */
+  .social-card-container {
+    display: flex;
+    gap: 40px; /* Espacio entre tarjetas */
+    flex-wrap: wrap; /* Permite que se acomoden en varias filas si es necesario */
+    justify-content: center;
+  }
+  
+  /* Tarjeta individual (invisible background) */
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent; /* Invisible */
+    border-radius: 10px;
+    text-align: center;
+    width: 120px; /* Controla el ancho de cada tarjeta */
+    gap: 10px; /* Espacio entre ícono y texto */
+  }
+  
+  /* Ícono circular */
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #333;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 3rem;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+    background: #444;
+
+  }
+  
+  /* Texto debajo del ícono */
+  .social-card span {
+    font-size: 0.9rem;
+    color: white;
+    max-width: 100px;
+    line-height: 1.2;
+  }
+  
+  @keyframes spinForward {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  @keyframes spinBackward {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+  }
+
+  social-icon i {
+    /* Estado inicial sin animación */
+    animation: none;
+    transform: rotate(0deg);
+  }
+  
+  .social-icon:hover i {
+    /* Al hacer hover, rota hacia adelante */
+    animation: spinForward 0.5s forwards;
+  }
+  
+  .social-icon i {
+    /* Cuando no hay hover, forzamos la animación contraria */
+    /* Pero sin pseudo-clase para 'mouse out' en CSS, 
+       esto se aplica siempre que NO esté en hover, 
+       pudiendo generar saltos al inicio */
+    animation: spinBackward 0.5s forwards;
+  }
+  /* Estilos específicos para cada red social (si lo deseas) */
+  .social-icon.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, 
+      #fdf497 0%, #fdf497 5%, #fd5949 45%, 
+      #d6249f 60%, #285AEB 90%);
+  }
+  
+  .social-icon.whatsapp:hover {
+    background: #25D366;
+  }
+  
+  .social-icon.discord:hover {
+    background: #7289da;
+    color: #fff;
+  }
+
+  .social-icon.reddit:hover {
+    background: #FF4500;
+  }
+  
+  
+  
+
+/* Sección "Explora más" */
+#connect {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.explore-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Para que las tarjetas se ajusten en pantallas más pequeñas */
+    margin-top: 20px;
+}
+
+.explore-card {
+    background: linear-gradient(135deg, #ff7a00, #ff3e00); /* Gradiente de colores vibrantes */
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px; /* Tamaño moderado */
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    overflow: hidden; /* Asegura que nada se salga del borde redondeado */
+}
+
+.explore-card i {
+    font-size: 40px; /* Tamaño del icono más grande para hacerlo resaltar */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Animación para los iconos */
+}
+
+.explore-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase; /* Título en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    text-decoration: none;
+}
+
+.explore-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.85; /* Texto ligeramente más transparente para un efecto elegante */
+    margin-bottom: 15px;
+}
+
+.explore-card:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta un poco al pasar el ratón */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff4f00, #ff1a00); /* Cambia el gradiente al hacer hover */
+}
+
+.explore-card:hover i {
+    transform: scale(1.1); /* Efecto de aumento en el icono al hacer hover */
+}
+
+/* Estilos adicionales */
+.explore-card:active {
+    transform: translateY(2px); /* Efecto de hundir la tarjeta al hacer clic */
+}
+
+.explore-card h3, .explore-card p {
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+.explore-card:hover h3, .explore-card:hover p {
+    color: #fff; /* El texto cambia a blanco para resaltar con el fondo */
+}
+
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 1rem;
+}
+
+/* Vista móvil */
+@media (max-width: 768px) {
+    /* Encabezado */
+    .header-image {
+        max-width: 70%; /* Reducir el tamaño de la imagen en dispositivos móviles */
+    }
+
+    /* Secciones */
+    section {
+        padding: 20px;
+        margin: 30px;
+    }
+
+    /* Títulos de secciones */
+    section h2 {
+        font-size: 2rem; /* Reducir el tamaño de los títulos en dispositivos móviles */
+    }
+
+    /* Párrafos */
+    section p, section ul {
+        font-size: 1rem; /* Reducir el tamaño de los párrafos */
+    }
+
+    .explore-card img {
+        width: 40%;
+        height: auto;
+    }
+
+    /* Botón "Únete ahora" */
+    .join-button {
+        padding: 12px 25px; /* Reducir el tamaño del botón */
+        font-size: 1.2em;
+    }
+
+    /* Botones sociales */
+    .social-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    
+}
+
+@media (max-width:600px) {
+  .explore-card {
+    width: 140px;
+  }
+}
+
+/* Vista móvil extra pequeña (para dispositivos muy pequeños) */
+@media (max-width: 480px) {
+    body{
+        background: url(img-web/fondomovil.png);
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: #ffffff;
+        line-height: 1.6;
+    }
+    
+    .explore-card img {
+        width: 40%;
+        height: auto;
+    }
+
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .header-image {
+        max-width: 70%;
+    }
+
+    .join-button {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+}
