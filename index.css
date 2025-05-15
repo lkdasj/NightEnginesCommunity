@@ -215,7 +215,13 @@ ul li {
   .social-icon.reddit:hover {
     background: #FF4500;
   }
-  
+  .social-icon.tiktok:hover {
+    background: linear-gradient(135deg, #69C9D0, #EE1D52);
+    color: white;
+  }
+
+
+
   
   
 
